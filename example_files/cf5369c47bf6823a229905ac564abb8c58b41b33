@@ -1,0 +1,7 @@
+google-cloud-functions
+google-cloud-secret-manager
+google-cloud-bigquery
+google-cloud-pubsub==2.9.0
+gunicorn>=19.2.0,<21.0
+Flask>=1.0,<3.0
+flask-login

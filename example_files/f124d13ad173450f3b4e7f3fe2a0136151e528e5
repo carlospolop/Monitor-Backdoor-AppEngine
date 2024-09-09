@@ -1,0 +1,7 @@
+runtime: python312
+
+entrypoint: gunicorn -b :$PORT main:app
+
+env_variables:
+  A_VARIABLE: "value"
+  GOOGLE_CLOUD_PROJECT: gcp-labs-3uis1xlx
