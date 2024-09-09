@@ -1,4 +1,4 @@
-# Monitor & Backdoor Cloud Functions
+# Monitor & Backdoor App Engine
 
 AppEngine versions generate some data inside a bucket with the format name: `staging.<project-id>.appspot.com`. Inside this bucket, it's possible to find a folder called `ae` that will contain a folder per version of the AppEngine app and inside these folders it'll be possible to find the `manifest.json` file. This file contains a json with all the files that must be used to create the specific version. Moreover, it's possible to find the **real names of the files, the URL to them inside the GCP bucket (the files inside the bucket changed their name for their sha1 hash) and the sha1 hash of each file.**
 
@@ -15,6 +15,8 @@ The mentioned attack can be performed in a lot of different ways, all of them st
 - Upload a modified `main.py` or `app.yaml` file that will execute the malicious code and update the `manifest.json` file with the new filename, URL and the hash of it.
 
 The script contained inside this folder will monitor the bucket and when a new version is created, it will backdoor it by modifying the `manifest.json` file. Therefore, before performing the attack you need to upload the backdoored files to an accessible bucket and update the `manifest.json` file of this repo with the new filenames, URLs and sha1 hashes. You have some examples of files you could update inside the folder `example_files/`.
+
+Find more information in https://cloud.hacktricks.xyz/pentesting-cloud/gcp-security/gcp-privilege-escalation/gcp-storage-privesc#app-engine
 
 ```bash
 # Installation
