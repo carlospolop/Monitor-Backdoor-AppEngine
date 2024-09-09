@@ -8,7 +8,7 @@ However, with read & write access over this bucket, it's possible to escalate pr
 
 The mentioned attack can be performed in a lot of different ways, all of them start by monitoring the `staging.<project-id>.appspot.com` bucket:
 
-- Upload the complete new code of the AppEngine version to a different and available bucket and prepared a `manifest.json` file with the new bucket name and sha1 hashes of them. Then, when a new version is created inside the bucket, you just need to modify the `manifest.json` file and upload the malicious one.
+- Upload the complete new code of the AppEngine version to a different and available bucket and prepare a `manifest.json` file with the new bucket name and sha1 hashes of them. Then, when a new version is created inside the bucket, you just need to modify the `manifest.json` file and upload the malicious one.
 
 - Upload a modified `requirements.txt` version that will use a the malicious dependencie code and upate the `manifest.json` file with the new filename, URL and the hash of it.
 
